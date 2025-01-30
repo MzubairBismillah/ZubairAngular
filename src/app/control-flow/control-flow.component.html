@@ -1,0 +1,31 @@
+<div class="row pt-3">
+    <div class="col-12">
+        <div  class="bg-primary p-12 text-center">
+            @if (selectedStatus== 'vehari') {
+                <p>vehari is 50km away from you</p>
+            }@else if (selectedStatus== 'thingi') {
+                <p>thingi is 20km away from you</p>
+            }@else if (selectedStatus== 'Mitru') {
+                <p>Mitru is 4km away from you</p>
+            }@else {
+                <p>please select status</p>
+            }
+            
+        </div>
+    </div>
+  </div>
+  
+  
+  
+  <div class="row pt-12">
+    <div class="col-3 text-center">
+        <div style="display: flex;align-items: center">
+            <select [(ngModel)]="selectedStatus" >
+                <option value="">Select city</option>
+                <option value="vehari">vehari</option>
+                <option value="thingi">thingi</option>
+                <option value="Mitru">Mitru</option>
+            </select>
+        </div>
+    </div>
+  </div>

@@ -1,0 +1,97 @@
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+    <!-- Header -->
+    <h2 class="bg-dark text-white p-3">Control Flow <b>FFor&switch</b> <small class="text-muted">[ngClass], [ngStyle]</small></h2>
+      </div>
+
+      <div class="row">
+        <div class="col-3">
+            <input type="text" [(ngModel)]="dayNumber" >
+        </div>
+            <div class="col-3">
+                Day Name is :
+                @switch (dayNumber) {
+                    @case ('1') {
+                        <p>Monday</p>
+                    }
+                    @case ('2') {
+                        <p>Tus</p>
+                    }
+                    @case ('3') {
+                        <p>wednesday</p>
+                    }
+                    @case ('4') {
+                        <p>thus</p>
+                    }
+                    @case ('5') {
+                        <p>>fri</p>
+                    }
+                    @case ('6') {
+                        <p>>sat</p>
+                    }
+                    @case ('7') {
+                        <p>sun</p>
+                    }
+                }
+            </div>
+        </div>
+     
+
+    
+      <div class="row pt-3">
+        <div class="col-3">
+            <ul>
+                @for (item of cityArray; track $index) {
+                    <li>{{item}}</li>
+                }
+            </ul>
+        </div>
+        <div class="col-3">
+            <div>
+                @for (item of cityArray; track $index) {
+                    <div>{{item}}</div>
+                }
+            </div>
+        </div>
+        <div class="col-3">
+            <select >
+                @for (item of cityArray; track $index) {
+                <option > {{item}}</option>
+            }
+            </select>
+        </div>
+        
+        <div class="col-3">
+            <select >
+                @for (item of StudentList; track $index) {
+                <option [value]="item.mark" > {{item.mark}}</option>
+            }
+            </select>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-5">
+            <div class="table table-bordered ">
+                <thead>
+                    <th>Sr No</th>
+                    <th>Name</th>
+                    <th>city</th>
+                    <th>gender</th>
+                    <th>marks</th>
+                </thead>
+                <tbody>
+                    @for (item of StudentList; track $index) {
+                        <tr>
+                            <td>{{$index+1}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.city}}</td>
+                            <td>{{item.gender}}</td>
+                            <td>{{item.mark}}</td>
+                        </tr>
+                    }
+                    
+                </tbody>
+            </div>
+        </div>
+      </div>
