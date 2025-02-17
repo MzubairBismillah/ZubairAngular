@@ -1,1 +1,49 @@
-<p>pipe works!</p>
+<div class="mt-2 p-2 bg-secondary text-white rounded">
+  <!-- Header -->
+  <h2>Pipe in angular</h2>
+  <h3>Default pipe& Custom pipe</h3>
+</div>
+<!-- Colored Divs -->
+
+<div class="row">
+  <div class="col-3">
+    Original value: {{ firstName }}
+    <br />
+    after pipe: {{ firstName | uppercase }}
+  </div>
+  <div class="col-3">
+    Original value: {{ firstName }}
+    <br />
+    after pipe: {{ firstName | lowercase }}
+  </div>
+  <div class="col-3">
+    Original value: {{ firstName }}
+    <br />
+    after pipe: {{ firstName | titlecase }}
+  </div>
+  <div class="col-3">
+    Original value: {{ currentDate }}
+    <br />
+    after pipe:{{ currentDate | date }}
+  </div>
+  <div class="col-3">
+    Original value: {{ currentDate }}
+    <br />
+    after pipe:{{ currentDate | date : "dd - MM - yyyy" }}
+  </div>
+  <div class="col-3">
+    Original value: {{ student }}
+    <br />
+    after pipe: {{ student | json }}
+  </div>
+  <div class="col-3">
+    Original value: {{ currentTime }}
+    <br />
+    after pipe: {{ currentTime | async  }}
+  </div>
+  <div class="col-3">
+    Original value: {{student}}
+    <br />
+    after pipe:{{student.city | na}}
+  </div>
+</div>
