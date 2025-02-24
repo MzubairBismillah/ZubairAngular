@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-2">
+        <div class="btn btn-success" (click)="getAllCustomers()">getApi</div>
+    </div>
+    <div class="col3">
+        <select  class="form-select"></select>
+        @for (item of listUser; track $index){
+            <option>{{item.name}}</option>
+        }
+    </div>
+</div>

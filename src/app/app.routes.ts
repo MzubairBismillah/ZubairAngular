@@ -7,6 +7,8 @@ import { ForComponent } from './for/for.component';
 import { PipeComponent } from './pipe/pipe.component';
 import { TemplateComponent } from './template/template.component';
 import { ReactiveComponent } from './reactive/reactive.component';
+import { GetApiComponent } from './get-api/get-api.component';
+import { PostApiComponent } from './post-api/post-api.component';
 
 export const routes: Routes = [
     {
@@ -41,5 +43,13 @@ export const routes: Routes = [
     { 
         path: 'ReactiveForm',
         component: ReactiveComponent
+    },
+    { 
+        path: 'getApi',
+        component: GetApiComponent
+    },
+    { 
+        path: 'postApi',
+        component: PostApiComponent
     }
 ];
