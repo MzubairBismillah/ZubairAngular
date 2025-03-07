@@ -11,13 +11,18 @@ import { FormControl, FormsModule } from '@angular/forms';
 })
 export class PostApiComponent implements OnInit {
 
-  deptList: any[] = []; 
-
+  
   ObjDept: any = {
     "departmentId": 0,
     "departmentName": "",
     "departmentLogo": ""
   };
+
+  deptList: any[] = []; 
+
+  
+    
+
 
   ngOnInit(): void {
     this.getDepartment();

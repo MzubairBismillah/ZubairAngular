@@ -51,5 +51,9 @@ export const routes: Routes = [
     { 
         path: 'postApi',
         component: PostApiComponent
+    },
+    { 
+        path: 'editApi',
+        component: PostApiComponent
     }
 ];

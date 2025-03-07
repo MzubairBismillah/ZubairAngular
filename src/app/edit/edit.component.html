@@ -1,0 +1,65 @@
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Department List Table -->
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">Department List</div>
+                <div class="card-body p-0">
+                    <table class="table table-bordered m-0">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Sr No</th>
+                                <th>Name</th>
+                                <th>City</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (item of deptList; track $index){
+                                <tr>
+                                    <td>{{$index+1}}</td>
+                                    <td>{{item.departmentName}}</td>
+                                    <td>{{item.departmentLogo}}</td>
+                                    <td>
+                                        <button class="btn btn-primary" (onclick)="onEdit(item)">Edit</button>
+                                        <button class="btn btn-danger" (onclick)="onDelete(item.departmentId)">Delete</button>
+                                        
+                                    </td>
+                                </tr>
+                            }
+                            
+                           
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- New Department Form -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">New Department</div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="deptName" class="form-label">Department Name</label>
+                            <input type="text" [(ngModel)]="ObjDept.departmentName" class="form-control" id="deptName" placeholder="Enter Name"  >
+                        </div>
+                        <div class="mb-3">
+                            <label for="deptLogo" class="form-label">Department Logo</label>
+                            <input type="text" [(ngModel)]="ObjDept.departmentLogo" class="form-control" id="deptLogo" placeholder="Enter Logo Url" >
+                        </div>
+                        <button type="reset" class="btn btn-secondary">Reset</button>
+                        @if(ObjDept.departmentId==0){
+                            <button type="submit" class="btn btn-success" (click)="onSave()">Save</button>
+                        }@else{
+                            <button class="btn btn-warning" (onclick)="onUpdate()">Update</button>
+                        }
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

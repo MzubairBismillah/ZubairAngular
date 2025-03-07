@@ -19,9 +19,9 @@
                                 @for (item of deptList; track $index){
                                     <tr>
                                         <td>{{$index+1}}</td>
-                                        <td>{{item.DepartmentName}}</td>
-                                        <td>{{item.DepartmentLogo}}</td>
-                                        <td>{{item.Status}}</td>
+                                        <td>{{item.departmentName}}</td>
+                                        <td>{{item.departmentLogo}}</td>
+                                        <td></td>
                                     </tr>
                                 }
                                 
@@ -40,11 +40,11 @@
                         <form>
                             <div class="mb-3">
                                 <label for="deptName" class="form-label">Department Name</label>
-                                <input type="text" [(ngModel)]="ObjDept.DepartmentName" class="form-control" id="deptName" placeholder="Enter Name">
+                                <input type="text" [(ngModel)]="ObjDept.departmentName" class="form-control" id="deptName" placeholder="Enter Name"  >
                             </div>
                             <div class="mb-3">
                                 <label for="deptLogo" class="form-label">Department Logo</label>
-                                <input type="text" [(ngModel)]="ObjDept.DepartmentLogo" class="form-control" id="deptLogo" placeholder="Enter Logo Url">
+                                <input type="text" [(ngModel)]="ObjDept.departmentLogo" class="form-control" id="deptLogo" placeholder="Enter Logo Url" >
                             </div>
                             <button type="reset" class="btn btn-secondary">Reset</button>
                             <button type="submit" class="btn btn-success" (click)="onSave()">Save</button>
