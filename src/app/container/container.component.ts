@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 
 @Component({
@@ -9,13 +10,16 @@ import { Component, inject } from '@angular/core';
 })
 export class ContainerComponent {
   isContainer: boolean = true;
+  isApi: boolean = false;
 
   http=inject(HttpClient);
   userList: any[] = [];
 
-  getUser() { 
+  getUser() {
+    this.isApi = true; 
     this.http.get('https://jsonplaceholder.typicode.com/users').subscribe((res:any) => {
       this.userList = res;
+      this.isApi = false;
     })
    }
 }

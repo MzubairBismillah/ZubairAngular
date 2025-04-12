@@ -2,45 +2,60 @@
   <h1>ng template</h1>
 </div>
 <div class="row">
-  <div class="col-4" >
-    <ng-container *ngIf ="isContainer">
-        <p>this is my container zubair</p>
+  <div class="col-4">
+    <ng-container *ngIf="isContainer">
+      <p>this is my container zubair</p>
     </ng-container>
-
   </div>
- 
+
   <div class="col-4"></div>
   <table class="table table-bordered m-0">
     <thead class="table-light">
-        <tr>
-            <th>Sr No</th>
-            <th>Name</th>
-            <th>User NAME</th>
-            <th>EMAIL</th>
-        </tr>
+      <tr>
+        <th>Sr No</th>
+        <th>Name</th>
+        <th>User NAME</th>
+        <th>EMAIL</th>
+      </tr>
     </thead>
     <tbody>
-        @for (item of userList; track $index){
-            <tr>
-                <td>{{$index+1}}</td>
-                <td>{{item.}}</td>
-                <td>{{item.departmentLogo}}</td>
-                <td></td>
-            </tr>
-        }
-        
-       
+      <ng-container>
+        <tr *ngIf="isApi">
+          <td class="colspan 4">
+            <div class="spinner-grow text-muted"></div>
+            <div class="spinner-grow text-primary"></div>
+            <div class="spinner-grow text-success"></div>
+            <div class="spinner-grow text-info"></div>
+            <div class="spinner-grow text-warning"></div>
+            <div class="spinner-grow text-danger"></div>
+            <div class="spinner-grow text-secondary"></div>
+            <div class="spinner-grow text-dark"></div>
+            <div class="spinner-grow text-light"></div>
+          </td>
+        </tr>
+      </ng-container>
+      <ng-container *ngIf ="!isApi">
+        <tr *ngFor="let student of userList; let srNO = index">
+            <td>{{ srNO + 1 }}</td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.username }}</td>
+            <td>{{ student.email }}</td>
+          </tr>
+      </ng-container>
+      
     </tbody>
-</table>
+  </table>
 
   <div class="col-4"></div>
 </div>
 
 <div class="row">
-    <div class="col-4"></div>
-       <button class="btn btn-secondary " (click)="getUser()" >User Data</button>
-    <div class="col-4"></div>
-    
-    <div class="col-4"></div>
-  </div>
+  <div class="col-4"></div>
+  <button class="btn btn-secondary" (click)="getUser()">User Data</button>
+  <div class="col-4"></div>
+
+  <div class="col-4">
   
+      
+  </div>
+</div>
