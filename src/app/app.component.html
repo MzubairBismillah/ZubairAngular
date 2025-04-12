@@ -30,14 +30,24 @@
         <li class="nav-item">
           <a class="nav-link " routerLink="ReactiveForm" >Reactive</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " routerLink="getApi" >getApi</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            API
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item"  routerLink="getApi" >getApi</a></li>
+            <li><a class="dropdown-item" routerLink="postApi" >postApi</a></li>
+            <li><a class="dropdown-item" routerLink="editApi" >editApi</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
-          <a class="nav-link " routerLink="postApi" >postApi</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link " routerLink="editApi" >editApi</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            NG-TEMPLATE
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item"  routerLink="ng-template" >ng template</a></li>
+            <li><a class="dropdown-item" routerLink="ng-container" >ng-container</a></li>
+          </ul>
         </li>
       </ul>
       <form class="d-flex" role="search">

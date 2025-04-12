@@ -9,6 +9,8 @@ import { TemplateComponent } from './template/template.component';
 import { ReactiveComponent } from './reactive/reactive.component';
 import { GetApiComponent } from './get-api/get-api.component';
 import { PostApiComponent } from './post-api/post-api.component';
+import { NgTemplateComponent } from './ng-template/ng-template.component';
+import { ContainerComponent } from './container/container.component';
 
 export const routes: Routes = [
     {
@@ -55,5 +57,14 @@ export const routes: Routes = [
     { 
         path: 'editApi',
         component: PostApiComponent
+    },
+    {
+        path: 'ng-template',
+        component: NgTemplateComponent
+    },
+    {
+        path: 'ng-container',
+        component: ContainerComponent
     }
+
 ];
