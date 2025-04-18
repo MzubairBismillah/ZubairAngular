@@ -1,0 +1,66 @@
+<nav class="text-bg-success p-3 navbar navbar-expand-lg  ">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Navbar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="dataBinding">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="add-emp">Employee</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="empList">EmployeeLIST</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="Control" >Control Flow</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="For" >for/switch</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="Pipe" >Pipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="templateForm" >Template</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="ReactiveForm" >Reactive</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              API
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"  routerLink="getApi" >getApi</a></li>
+              <li><a class="dropdown-item" routerLink="postApi" >postApi</a></li>
+              <li><a class="dropdown-item" routerLink="editApi" >editApi</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              NG-TEMPLATE
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item"  routerLink="ng-template" >ng template</a></li>
+              <li><a class="dropdown-item" routerLink="ng-container" >ng-container</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " routerLink="viewChild" >viewChild</a>
+          </li>
+        </ul>
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit" (onclick)="logOff()">Logout</button>
+        </form>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>

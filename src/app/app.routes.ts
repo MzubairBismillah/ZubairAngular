@@ -11,8 +11,27 @@ import { GetApiComponent } from './get-api/get-api.component';
 import { PostApiComponent } from './post-api/post-api.component';
 import { NgTemplateComponent } from './ng-template/ng-template.component';
 import { ContainerComponent } from './container/container.component';
+import { ViewChild } from '@angular/core';
+import { LoginComponent } from './login/login.component';
+import { LayoutComponent } from './layout/layout.component';
 
 export const routes: Routes = [
+
+    //default route
+    {
+        path: '',
+        redirectTo: 'Login',
+        pathMatch: 'full'
+    },
+    {
+        path: 'Login',  
+        component: LoginComponent
+    },
+    {
+        path: 'layout',
+        component: LayoutComponent,
+        children: [
+            
     {
         path:'add-emp',
         component: AddEmployeeComponent
@@ -66,5 +85,5 @@ export const routes: Routes = [
         path: 'ng-container',
         component: ContainerComponent
     }
-
+    ]}
 ];

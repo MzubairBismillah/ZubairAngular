@@ -7,7 +7,7 @@ import { DataBindingComponent } from "./data-binding/data-binding.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,RouterLink],
+  imports: [RouterOutlet,],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
