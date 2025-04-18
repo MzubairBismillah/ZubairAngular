@@ -3,6 +3,7 @@ import { Component, TemplateRef, ViewChild, ViewContainerRef } from '@angular/co
 
 @Component({
   selector: 'app-ng-template',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './ng-template.component.html',
   styleUrl: './ng-template.component.css'

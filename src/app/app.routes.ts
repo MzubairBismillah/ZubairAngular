@@ -30,8 +30,7 @@ export const routes: Routes = [
     {
         path: 'layout',
         component: LayoutComponent,
-        children: [
-            
+        children: [       
     {
         path:'add-emp',
         component: AddEmployeeComponent
@@ -85,5 +84,6 @@ export const routes: Routes = [
         path: 'ng-container',
         component: ContainerComponent
     }
-    ]}
+    ]
+}
 ];

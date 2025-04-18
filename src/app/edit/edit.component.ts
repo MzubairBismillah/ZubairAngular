@@ -4,6 +4,7 @@ import { FormControl, FormsModule  } from '@angular/forms';
 
 @Component({
   selector: 'app-edit',
+  standalone: true,
   imports: [FormsModule],
   templateUrl: './edit.component.html',
   styleUrl: './edit.component.css'

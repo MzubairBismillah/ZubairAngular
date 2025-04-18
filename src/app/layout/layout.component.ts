@@ -1,5 +1,6 @@
 import { Component,inject} from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
+import { EmployeeListComponent } from '../employee-list/employee-list.component';
 
 
 
@@ -15,7 +16,7 @@ export class LayoutComponent {
   router = inject(Router);
   logOff() {
     localStorage.removeItem("LoginUser");
-    this.router.navigateByUrl('Login');
+    this.router.navigateByUrl('/Login');
   }
 
 }

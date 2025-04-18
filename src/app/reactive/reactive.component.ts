@@ -4,6 +4,7 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive',
+  standalone: true,
   imports: [ReactiveFormsModule,JsonPipe],
   templateUrl: './reactive.component.html',
   styleUrl: './reactive.component.css'
