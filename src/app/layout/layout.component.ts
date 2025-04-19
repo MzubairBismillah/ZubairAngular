@@ -14,6 +14,15 @@ import { EmployeeListComponent } from '../employee-list/employee-list.component'
 export class LayoutComponent {
 
   router = inject(Router);
+  loggedUserData: any ;
+   
+  constructor(){
+    const loggedData = localStorage.getItem("LoginUser");
+    if(loggedData != null){
+      this.loggedUserData = JSON.parse(loggedData);
+    }
+  }
+
   logOff() {
     localStorage.removeItem("LoginUser");
     this.router.navigateByUrl('/Login');
