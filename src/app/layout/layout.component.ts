@@ -1,5 +1,5 @@
 import { Component,inject} from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
 import { EmployeeListComponent } from '../employee-list/employee-list.component';
 
 
@@ -7,7 +7,7 @@ import { EmployeeListComponent } from '../employee-list/employee-list.component'
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLink],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })

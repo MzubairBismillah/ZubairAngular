@@ -1,87 +1,78 @@
-import { Component, inject , OnInit } from '@angular/core';
+import { Component, inject, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { FormControl, FormsModule  } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
+
+
+declare function alert(message: string): void;
+declare function confirm(message: string): boolean;
+
 
 @Component({
   selector: 'app-edit',
   standalone: true,
   imports: [FormsModule],
   templateUrl: './edit.component.html',
-  styleUrl: './edit.component.css'
+  styleUrls: ['./edit.component.css'] // ✅ Fixed here
 })
 export class EditComponent implements OnInit {
 
-
   ObjDept: any = {
-    "departmentId": 0,
-    "departmentName": "",
-    "departmentLogo": ""
+    departmentId: 0,
+    departmentName: '',
+    departmentLogo: ''
   };
 
-  deptList: any[] = []; 
+  deptList: any[] = [];
 
-
-
+  http = inject(HttpClient);
 
   ngOnInit(): void {
     this.getDepartment();
   }
 
-  http = inject(HttpClient);
-
-  onEdit(item: any){  
-    debugger;
-    this.ObjDept = item;
+  onEdit(item: any) {
+    this.ObjDept = { ...item };
   }
- 
 
-
-  onSave(){
-    debugger;
-    this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment", this.ObjDept).subscribe((res:any)=>{
-      debugger;
-      if(res.result){
-        alert("Data Saved Successfully");
+  onSave() {
+    this.http.post('https://projectapi.gerasim.in/api/Complaint/AddNewDepartment', this.ObjDept).subscribe((res: any) => {
+      if (res.result) {
+        alert('Data Saved Successfully');
         this.getDepartment();
-      }else{
+      } else {
         alert(res.message);
       }
     });
   }
 
-  onUpdate(){
-    debugger;
-    this.http.post("https://projectapi.gerasim.in/api/Complaint/UpdateDepartment", this.ObjDept).subscribe((res:any)=>{
-      debugger;
-      if(res.result){
-        alert("Data Updated Successfully");
+  onUpdate() {
+    this.http.post('https://projectapi.gerasim.in/api/Complaint/UpdateDepartment', this.ObjDept).subscribe((res: any) => {
+      if (res.result) {
+        alert('Data Updated Successfully');
         this.getDepartment();
-      }else{
+      } else {
         alert(res.message);
       }
     });
   }
-  onDelete(id: number){
-    const isDelete = confirm("Do you want to delete this record?");
-    if(isDelete){
-    debugger;
-    this.http.delete("https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=" +id).subscribe((res:any)=>{
-      debugger;
-      if(res.result){
-        alert("Data Deleted Successfully");
-        this.getDepartment();
-      }else{
-        alert(res.message);
-      }
-    });
-  }
-}
 
-  getDepartment(){
-    debugger;
-    this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment").subscribe((res:any)=>{
-      debugger;
+  onDelete(id: number) {
+    const isDelete = confirm('Do you want to delete this record?');
+    if (isDelete) {
+      this.http.delete('https://projectapi.gerasim.in/api/Complaint/DeletedepartmentBydepartmentId?departmentId=' + id).subscribe((res: any) => {
+        if (res.result) {
+          alert('Data Deleted Successfully');
+          this.getDepartment();
+        } else {
+          alert(res.message);
+        }
+      });
+    }
+  }
+
+  getDepartment() {
+    this.http.get('https://projectapi.gerasim.in/api/Complaint/GetParentDepartment').subscribe((res: any) => {
       this.deptList = res.data;
-    })
+    });
   }
 }

@@ -14,6 +14,7 @@ import { ContainerComponent } from './container/container.component';
 import { ViewChild } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
+import { authenticationGuard } from './services/authentication.guard';
 
 export const routes: Routes = [
 
@@ -41,11 +42,13 @@ export const routes: Routes = [
     },
     {
         path: 'dataBinding',
-        component: DataBindingComponent
+        component: DataBindingComponent,
+        
     },
     {
         path: 'Control',
         component: ControlFlowComponent
+
 
     },
     {
@@ -58,7 +61,8 @@ export const routes: Routes = [
     },
     { 
         path: 'templateFrom',
-        component: TemplateComponent
+        component: TemplateComponent,
+        canActivate: [authenticationGuard]
     },
     { 
         path: 'ReactiveForm',
@@ -66,7 +70,8 @@ export const routes: Routes = [
     },
     { 
         path: 'getApi',
-        component: GetApiComponent
+        component: GetApiComponent,
+       
     },
     { 
         path: 'postApi',
