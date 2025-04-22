@@ -30,10 +30,14 @@ export class PostApiComponent implements OnInit {
 
   http = inject(HttpClient);
 
+  constants = {
+    API_URL: 'https://projectapi.gerasim.in/api/Complaint/AddNewDepartment', // Replace with your actual API URL      
+  }
+
 
   onSave(){
     debugger;
-    this.http.post("https://projectapi.gerasim.in/api/Complaint/AddNewDepartment", this.ObjDept).subscribe((res:any)=>{
+    this.http.post(this.constants.API_URL, this.ObjDept).subscribe((res:any)=>{
       debugger;
       if(res.result){
         alert("Data Saved Successfully");
@@ -52,3 +56,7 @@ export class PostApiComponent implements OnInit {
     })
   }
 }
+function alert(arg0: string) {
+  throw new Error('Function not implemented.');
+}
+
