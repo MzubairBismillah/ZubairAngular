@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Customer } from '../Model/Class/Customer';
 
 @Component({
   selector: 'app-get-api',
@@ -8,29 +9,18 @@ import { Component } from '@angular/core';
   templateUrl: './get-api.component.html',
   styleUrl: './get-api.component.css'
 })
-export class GetApiComponent {
-   listUser: any[] = [];
-   customerList: any[] = [];
-  constructor(private http: HttpClient){
+export class GetApiComponent implements OnInit {
+  listUser: Customer[] = [];
 
-  }
+  constructor(private http: HttpClient) { }
 
-  getAllUsers(){
-    debugger;
-    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((result:any)=>{
-      debugger;
+  ngOnInit(): void {
+    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((result: any) => {
       this.listUser = result;
-    } )
+    });
   }
 
-  getAllCustomers(){
-    debugger;
-    this.http.get("https://projectapi.gerasim.in/api/RealEstate/GetAllCustomers").subscribe((result:any)=>{
-      debugger;
-      this.customerList= result;
-    }); 
+  getAllCustomers() {
+    throw new Error('Method not implemented.');
   }
-
-
-            
 }
