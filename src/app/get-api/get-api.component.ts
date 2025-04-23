@@ -10,16 +10,27 @@ import { Component } from '@angular/core';
 })
 export class GetApiComponent {
    listUser: any[] = [];
+   customerList: any[] = [];
   constructor(private http: HttpClient){
 
   }
 
-  getAllCustomers(){
+  getAllUsers(){
     debugger;
     this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((result:any)=>{
       debugger;
       this.listUser = result;
     } )
   }
+
+  getAllCustomers(){
+    debugger;
+    this.http.get("https://projectapi.gerasim.in/api/RealEstate/GetAllCustomers").subscribe((result:any)=>{
+      debugger;
+      this.customerList= result;
+    }); 
+  }
+
+
             
 }
