@@ -15,12 +15,25 @@ export class GetApiComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((result: any) => {
-      this.listUser = result;
+
+    debugger;
+    
+    this.http.get("https://jsonplaceholder.typicode.com/users").subscribe((res: any) => {
+      if (res) {
+        alert("Data fetched successfully");
+        this.listUser = res;
+      } else {                              
+        alert("Data not fetched successfully");
+      }
     });
   }
 
   getAllCustomers() {
+
     throw new Error('Method not implemented.');
   }
 }
+function alert(arg0: string) {
+  throw new Error('Function not implemented.');
+}
+
