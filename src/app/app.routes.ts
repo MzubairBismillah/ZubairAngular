@@ -11,10 +11,11 @@ import { GetApiComponent } from './get-api/get-api.component';
 import { PostApiComponent } from './post-api/post-api.component';
 import { NgTemplateComponent } from './ng-template/ng-template.component';
 import { ContainerComponent } from './container/container.component';
-import { ViewChild } from '@angular/core';
+import { signal, ViewChild } from '@angular/core';
 import { LoginComponent } from './login/login.component';
 import { LayoutComponent } from './layout/layout.component';
 import { authenticationGuard } from './services/authentication.guard';
+import { SignalComponent } from './signal/signal.component';
 
 export const routes: Routes = [
 
@@ -88,6 +89,10 @@ export const routes: Routes = [
     {
         path: 'ng-container',
         component: ContainerComponent
+    },
+    {
+        path: 'signal',
+        component: SignalComponent
     }
     ]
 }

@@ -1,0 +1,42 @@
+<div class="mt-2 p-2  bg-secondary text-white rounded">
+    <h1>Signal</h1>
+</div>
+
+
+  <div class="row">
+    <div class="col-3">
+        {{LanguageName()}}
+    </div>
+
+
+    <div class="col-3">
+        {{fullName()}}  
+    </div>
+
+    <div class="col-3">
+        {{City()}}
+        
+    </div>
+    <div class="col-3">
+        {{StudentObj().firstName}} - {{StudentObj().lastName}} - {{StudentObj().city}} - {{StudentObj().age}}   
+        
+
+    </div>
+        
+ <div class="row">
+    <div class="col-3">
+    <button class="btn btn-primary" (click)="changeName()">change</button>
+    </div>
+
+    <div class="col-3">
+    <button class="btn btn-primary" (click)="changeName()">change2</button>
+    <button class="btn btn-primary" (click)="changeLastName()">change3</button>
+    </div>
+    <div class="col-3">
+    <button class="btn btn-primary" (click)="changeCity()">change4</button>
+    </div>
+
+    <div class="col-3">
+    <button class="btn btn-primary" (click)="changeStudentObj()">change5</button>
+ </div>
+  
